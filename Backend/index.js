@@ -1,14 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 4000;
 const authRoute = require("./routes/authRoute");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
-
+const productRoute = require("./routes/productRoute");
 //middlewares
+
+app.use(morgan("dev"));
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -23,5 +26,6 @@ mongoose
     });
   });
 app.use(authRoute);
+app.use(productRoute);
 app.use(notFound);
 app.use(errorHandler);
