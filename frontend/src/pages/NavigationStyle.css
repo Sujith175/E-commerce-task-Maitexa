@@ -1,0 +1,27 @@
+.nav-container {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  background-color: rgb(4, 73, 129);
+}
+.logo-container {
+  height: 100%;
+  width: 70px;
+  padding: 5px;
+  color: white;
+}
+
+.nav-link-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-links {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+}
